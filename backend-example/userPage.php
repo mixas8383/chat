@@ -28,13 +28,13 @@
     <!-- Подключаем библиотеки -->
     <script src="https://comet-server.com/CometServerApi.js" type="text/javascript"></script>  
     
-    <script type="text/javascript" src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/js/jquery.min.js"></script> 
-    <script type="text/javascript" src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/js/jquery.cookie.js"></script>
-    <script type="text/javascript" src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/js/moment.min.js"></script>
-    <script type="text/javascript" src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/tinyscrollbar/jquery.tinyscrollbar.js"></script>
+    <script type="text/javascript" src="http://chat.dev/js/jquery.min.js"></script> 
+    <script type="text/javascript" src="http://chat.dev/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="http://chat.dev/js/moment.min.js"></script>
+    <script type="text/javascript" src="http://chat.dev/tinyscrollbar/jquery.tinyscrollbar.js"></script>
     
-    <script type="text/javascript" src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/chat.js"></script>
-    <link rel="stylesheet" href="https://comet-server.com/doc/CometQL/Star.Comet-Chat/chat.css"> 
+    <script type="text/javascript" src="http://chat.dev/chat.js"></script>
+    <link rel="stylesheet" href="http://chat.dev/chat.css"> 
 
 
 
@@ -75,7 +75,7 @@ $(document).ready(function()
         open:false,
         
         // Параметр home_dir содержит адрес расположения php скриптов чата
-        home_dir: "//comet-server.com/doc/CometQL/Star.Comet-Chat",
+        home_dir: "//chat.dev",
 
         // Параметр home_dir содержит адрес расположения php скриптов чата 
         user_url_tpl:"//comet-server.com/user/",

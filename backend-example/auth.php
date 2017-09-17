@@ -40,7 +40,7 @@ List of chat users with whom you can send a message:<br>
         }
         else
         { 
-            echo $i.' - <a href="https://comet-server.com/doc/CometQL/Star.Comet-Chat/backend-example/userPage.php?name='.$info['login'].'">'.$info['name'].'</a>'; 
+            echo $i.' - <a href="http://chat.dev/backend-example/userPage.php?name='.$info['login'].'">'.$info['name'].'</a>'; 
         }
         echo "<br>"; 
     }while(true); 

@@ -14,7 +14,7 @@ include './config.php';
 include './common.php';
 
 $user_id = getUserIdOrDie(); 
- 
+
 $contacts = array();
 $contacts[] = $user_id; 
 
@@ -39,8 +39,7 @@ $qery = "select contacts.*, new_messages.count_new_msg as newMessages
 
 $result = mysqli_query(StarCometChat::conf()->getDB(), $qery);
 
-
-
+ini_set('display_errors',1);ini_set('display_startup_errors',1);error_reporting(E_ALL);
 if(mysqli_errno(StarCometChat::conf()->getDB()) != 0)
 {
     echo "Error code:".mysqli_errno(StarCometChat::conf()->getDB())." ".mysqli_error(StarCometChat::conf()->getDB())."";

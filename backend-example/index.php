@@ -21,9 +21,9 @@ include './config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Connect Libraries -->
-    <script src="https://comet-server.com/CometServerApi.js" type="text/javascript"></script>
-    <script src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/js/jquery.min.js"      type="text/javascript"></script>
-    <script src="https://comet-server.com/doc/CometQL/Star.Comet-Chat/js/jquery.cookie.js"   type="text/javascript" ></script>
+    <script src="http://chat.dev/CometServerApi.js" type="text/javascript"></script>
+    <script src="http://chat.dev/js/jquery.min.js"      type="text/javascript"></script>
+    <script src="http://chat.dev/js/jquery.cookie.js"   type="text/javascript" ></script>
     <title>Chat</title>
 </head>
 <body>
@@ -45,7 +45,7 @@ include './config.php';
             break;
         }
         
-        echo $i.' - <a href="https://comet-server.com/doc/CometQL/Star.Comet-Chat/backend-example/auth.php?id='.($i).'">'.$info['name'].'</a>'; 
+        echo $i.' - <a href="http://chat.dev/backend-example/auth.php?id='.($i).'">'.$info['name'].'</a>'; 
         echo "<br>"; 
     }while(true); 
 ?> 

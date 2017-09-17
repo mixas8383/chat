@@ -14,7 +14,7 @@
 include './config.php';
 include './common.php';
 
-testIpOrDie();
+//testIpOrDie();
 
 if(isset($_GET['hash']))
 {

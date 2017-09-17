@@ -1,0 +1,64 @@
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="chat.css" rel="stylesheet" type="text/css"/>
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+
+        crossorigin="anonymous"></script>
+        <script src="js/jquery.cookie.js" type="text/javascript"></script>
+        <script src="js/jquery.timeago.js" type="text/javascript"></script>
+        <script src="js/jquery.timeago.js" type="text/javascript"></script>
+        <script src="tinyscrollbar/jquery.tinyscrollbar.js" type="text/javascript"></script>
+        <script src="CometServerApi.js" type="text/javascript"></script>
+        <script src="chat.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <div id="web_chat">TODO write content</div>
+        <script>
+            $(document).ready(function ()
+            {
+                /**
+                 * Connecting to the comet server for opportunity to accept commands
+                 * dev_id – your public developer’s identifier
+                 * user_id – user’s identifier which helps you to log in
+                 * user_key – you authorization hash
+                 */
+
+
+                CometServer().start({dev_id: 0, user_id: 1, user_key: 'abramian', node: 'comet.com:8087/'})
+
+                /**
+                 * We initialize chat module, next performs initialization and loading of required data for the correct work
+                 * Chat window in such case is not opened
+                 */
+                StarCometChat.init({
+                    user_id: 1,
+                    user_key: 'abramian',
+                    open: false,
+
+                    // The parameter home_dir includes address with PHP scripts 
+                    home_dir: "http://chat.dev",
+
+                    // The function, implemented in success, calls after successful chat initialization  
+                    success: function ()
+                    {
+                        // The call of countNewMessagesSum return an amount of new messages. It works correctly just after ending of chat initialization
+                        var c = StarCometChat.countNewMessagesSum();
+                        if (c > 0)
+                        {
+                            $('#newMsgIndicator').html("You have " + c + " new messages");
+                        }
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

@@ -27,8 +27,8 @@ $conf['cookie_expire'] = 3600*24;                    // Lifetime authentication 
 /**
  * the address of the directory from which the chat works is used in the admin panel
  */
-$conf['home_dir'] = "https://comet-server.com/doc/CometQL/Star.Comet-Chat";
-$conf['host_name'] = "https://comet-server.com";
+$conf['home_dir'] = "http://chat.dev";
+$conf['host_name'] = "http://chat.dev";
 
 /**
  * api the key for the work of yandex translator
@@ -46,12 +46,12 @@ $conf['file_dir'] = "chatFiles";
  * Fragment of url of the address of the user profile page
  * used in the admin panel
  */
-$conf['user_url_tpl'] = "https://comet-server.com/doc/CometQL/Star.Comet-Chat/backend-example/userPage.php?name=";
+$conf['user_url_tpl'] = "http://chat.dev/userPage.php?name=";
  
 /**
  * Part of the way to avatars
  * @type String
- * Example https://comet-server.com/avatar/
+ * Example http://chat.dev/avatar/
  * And then the user's login will be added
  */
 $conf['user_avatar_url_tpl'] = ""; 
@@ -59,16 +59,16 @@ $conf['user_avatar_url_tpl'] = "";
 /**
  * Access to the database
  */
-$conf['mysql_db'] = "StarCometChat";
-$conf['mysql_user'] = "StarCometChat";
-$conf['mysql_pw'] = "RLUJ4TXE22XL5JTh";
+$conf['mysql_db'] = "chat";
+$conf['mysql_user'] = "root";
+$conf['mysql_pw'] = "";
 $conf['mysql_host'] = "localhost"; 
 /**
  * Access to the comet server
- * Get access keys here https://comet-server.com/#price
+ * Get access keys here http://chat.dev/#price
  */
-$conf['cometQL_dev_id'] = 15;
-$conf['cometQL_key'] = "lPXBFPqNg3f661JcegBY0N0dPXqUBdHXqj2cHf04PZgLHxT6z55e20ozojvMRvB8";
+$conf['cometQL_dev_id'] = 0;
+$conf['cometQL_key'] = "abramian";
 
 /**
  * Allows access only for requests from trusted ip addresses
@@ -91,12 +91,12 @@ function getConfArray($val)
  * URL to request an authentication hash
  * Used only in getUsersHash
  */
-$conf['URL_getUsersHash'] = 'https://comet-server.com/doc/CometQL/Star.Comet-Chat/backend-example/chat_get_user_hash.php';
+$conf['URL_getUsersHash'] = 'http://chat.dev/backend-example/chat_get_user_hash.php';
 /**
  * URL to request information about users in json
  * Used only in getUsersInfo
  */
-$conf['URL_getUsersInfo'] = 'https://comet-server.com/doc/CometQL/Star.Comet-Chat/backend-example/chat_get_users.php'; 
+$conf['URL_getUsersInfo'] = 'http://chat.dev/backend-example/chat_get_users.php'; 
  
 
 
@@ -194,7 +194,7 @@ class StarCometChat
             /**
              * Access to the comet server
              */
-            $this->comet = mysqli_connect("app.comet-server.ru", getConfArray('cometQL_dev_id'), getConfArray('cometQL_key'), "CometQL_v1");
+            $this->comet = mysqli_connect("comet.com", 0, 'abramian', "CometQL_v1",3300);
             if ( !$this->comet ) die ("Can not connect to CometQL");
         }
 
@@ -210,7 +210,7 @@ class StarCometChat
  * Example of a valid response
  * [array(
  *  "user_id" => 6,
- *  "avatar_url" => "https://comet-server.com/doc/CometQL/Star.Comet-Chat/img/avatar0.png",
+ *  "avatar_url" => "http://chat.dev/img/avatar0.png",
  *  "name" => "Артём",
  *  "city" => "Артём",
  *  "age" => 12,
@@ -219,7 +219,7 @@ class StarCometChat
  * ),
  * array(
  *  "user_id" => 6,
- *  "avatar_url" => "https://comet-server.com/doc/CometQL/Star.Comet-Chat/img/avatar0.png",
+ *  "avatar_url" => "http://chat.dev/img/avatar0.png",
  *  "name" => "Артём",
  *  "city" => "Артём",
  *  "age" => 12,
