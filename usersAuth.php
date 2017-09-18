@@ -16,10 +16,20 @@ include './common.php';
 
 //testIpOrDie();
 
+
+    
+
 if(isset($_GET['hash']))
 {
     // User Login
+    
+       
+         
+     
     mysqli_query(StarCometChat::conf()->getComet(), "INSERT INTO users_auth (id, hash)VALUES (".((int)$_GET['id']).", '".mysqli_real_escape_string(StarCometChat::conf()->getComet(),$_GET['hash'])."')");  
+    
+     
+    
 }
 else
 {

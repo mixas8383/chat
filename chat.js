@@ -132,7 +132,7 @@ StarCometChat.opt.langs = [{name:'ru', textName:['Русский']}, {name:'en',
 StarCometChat.init = function(options)
 {
     $('.StarCometChat').hide();
-
+CometServer().start({dev_id: 0, node: 'comet.com:8087'})
     if(StarCometChat.initProgress === true)
     {
         return;
@@ -754,6 +754,7 @@ StarCometChat.sendAbuse = function()
  */
 StarCometChat.addSubscriptionToUserStatus = function(userId)
 {
+    
     // Подписываемся на информацию о статусе пользователя online
     CometServer().subscription("user_status_"+userId+".online", function(event)
     {

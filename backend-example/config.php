@@ -95,8 +95,6 @@ function getUserHash($user_id)
 // Call when a user logs on to the site
 function sendUserLoginInfo($user_id)
 {
-
-
     $ch = curl_init();
 
     curl_setopt($ch, CURLOPT_URL, "http://chat.dev/usersAuth.php?id=" . ((int) $user_id) . "&hash=" . getUserHash($user_id));
